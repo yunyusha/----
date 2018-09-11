@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        html,body{
+            background: #f8f8f8;
+        }
+        .head{
+            background: white;
+            padding: 20px 20px 50px;
+        }
+        .head img{
+            width: 100%;
+        }
+        .head div{
+            padding: 0;
+        }
+        .head div:first-child{
+            padding-right: 17px;
+        }
+        .head div:last-child {
+            padding-left: 17px;
+        }
+        /*title*/
+        .title h3{
+        font-size: 20px;
+            color: #989898;
+            font-weight: 200;
+        }
+        .title{
+            margin-top: 20px;
+        }
+        .title a{
+        color: #ff2d77;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        @media only screen and (max-width: 768px){
+            .head div{
+                padding: 0!important;
+            }
+            .head div:last-child{
+                margin-top: 20px;
+            }
+        }
+        /*models*/
+        .models a{
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .models img{
+            width: 100%;
+        }
+        .models .mask{
+            height: 50px;
+            background: rgba(0,0,0,0.7);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -50px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 12px;
+            transition: all 0.5s;
+        }
+        .models a:hover .mask{
+            bottom: 0;
+        }
+        .models .mask .yellow{
+            padding: 3px 5px;
+            background: orange;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .models .txt{
+            font-size: 12px;
+            color: rgba(0,0,0,0.44);
+            margin: 5px 0;
+            font-weight: 200;
+        }
+        .models>div{
+            padding: 0 0 0 5px;
+            margin-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 1200px){
+            .models>div:nth-child(6n-5){
+
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row head">
+            <div class="col-xs-12 col-sm-6">
+                <a href="#"><img src="images/banner01.jpg" alt=""></a>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <a href="#"><img src="images/banner02.jpg" alt=""></a>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-xs-6">
+                <h3>外籍超模榜</h3>
+            </div>
+            <div class="col-xs-6 text-right">
+                <a href="#">查看更多>></a>
+            </div>
+        </div>
+
+        <div class="row models">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+
+
+             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <a href="#">
+                        <img src="images/girl1.jpg" alt="">
+                        <div class="mask">
+                            <span class="yellow">VIP</span>
+                            <span>DemonQ</span>
+                        </div>
+                </a>
+                <div class="txt">模特ID/218</div>
+                <div class="txt">热度值/ 523 ℃</div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

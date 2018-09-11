@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .f1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border:1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="f1"></div>
+    <input type="text" name="user">
+
+    <div class="f3">
+        <p>我是中间的p</p>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+    //获取标签的高度
+    /*
+    * height()获取标签内容层高度
+    * innerHeight():获取标签内边距和内容层总高度
+    * outerHeight():获取标签内边距,边框和内容层高度
+    * */
+    console.log($('.f1').height());
+    console.log($('.f1').innerHeight());
+    console.log($('.f1').outerHeight());
+
+    //标签的属性操作
+    //为指定标签添加属性
+    $('.f1').attr('id','new');
+    //获取标签属性
+    console.log($('.f1').attr('id'));
+    //删除标签属性
+    $('.f1').removeAttr('id');
+    //修改标签属性
+    $('.f1').attr('class','f1 f2');
+
+    //为普通标签添加文本
+    $('.f1').html('<h1>静夜思</h1>');
+    console.log($('.f1').html());
+    console.log($('.f1').text());
+
+    /*
+    * html()和text()的区别和联系
+    * 联系:都可以从指定标签中获取数据或向指定标签中
+    * 插入数据
+    * 区别: html()向标签中插入的可以是一段文本或
+    * 一段html网页结果,text()只能向标签中插入
+    * 或从标签中获取文本内容
+    *
+    * */
+
+    //form表单控件数据的获取或设置
+    // $('input[name="user"]'.).val('65++60/');
+
+    //向指定标签内部最后面插入元素
+    $('.f3').append("<p>这是后面的p</p>");
+    //向指定标签内容的最前面插入元素
+    $('.f3').prepend("<p>这是最前面的p</p>");
+
+    //向标签指定标签同一级插入元素(向后插入)
+    $('.f3').after('<div>我是后面的div</div>');
+    //向标签同一级插入元素(向前插入)
+    $('.f3').before('<div>我是前面的div</div>')
+
+
+    //删除指定的元素,标签一并删除
+    // $('.f3').remove();
+    //直接将指定的标签清空,但是该标签还在网页中
+    // $('.f3').empty();
+    //在指定标签的外层包裹一个对应的标签
+
+    $('p').wrap('<div class="ppp"></div>');
+    $('p').unwrap();
+    //在所有指定标签外层包裹一个对应的标签
+    $('p').wrapAll('<div class="ppp"></div>');
+
+    //用指定的元素替换所有选择到的DOM元素(以下两个均是)
+    // $('p').replaceWith('<h1>这是标题</h1>');
+    // $('<h1>我是标题</h1>').replaceAll('p');
+
+    //设置标签显示或隐藏
+    // $('.f1').hide();
+    // $('.f1').show();
+    // $('h1').hide();
+    // let timer = setTimeout(function () {
+    //     $('h1').fadeIn('slow',function () {
+    //         // alert('动画结束')
+    //     });
+    // },2000);
+    //自定义动画
+    $('.f1').animate({
+        transform:"rotate(360deg)"
+    },1000,function () {
+        alert('动画完成')
+    })
+
+</script>
+
+</html>

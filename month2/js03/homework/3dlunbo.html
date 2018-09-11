@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d轮播效果</title>
+    <style type="text/css">
+        a{
+            display: block;
+        }
+        .window {
+				width: 80%;
+				margin: 200px auto;
+				text-align: center;
+				position: relative;
+				height: 300px;
+			}
+			.left {
+				width: 15%;
+				transform:scale(1,1);
+				position: absolute;
+				left: 0;
+				top: 10px;
+				transition: all 1s;
+
+			}
+			.middle {
+				width: 25%;
+				transform: scale(1.5,1.5);
+				position: absolute;
+				left: 37%;
+				top: 0;
+				transition: all 1s;
+                z-index: 2;
+			}
+			.right {
+				width: 15%;
+				transform:scale(1,1);
+				position: absolute;
+				left: 77%;
+				top: 10px;
+				transition: all 1s;
+
+			}
+    </style>
+</head>
+<body>
+    	<div class="window">
+			<a href="#" class="left"><img src="img/j1.jpg" alt="" /></a>
+			<a href="#" class="middle" id="middle"><img src="img/j2.jpg" alt="" /></a>
+			<a href="#" class="right"><img src="img/j3.jpg" alt="" /></a>
+		</div>
+<script>
+    window.onload = function (ev) {
+         bind_click();
+    };
+function change_circle(count) {
+    //获取所有的图片的a标签
+
+       let y = document.querySelector('.left');
+        y.style.zIndex=1;
+    let a = document.querySelectorAll('a');
+    for(let i = 0; i < a.length; i++){
+        a[i].removeAttribute('class');
+    }
+    //将第count个图片对应的图片设为中间显示
+    if (count==2){
+    a[count-1].setAttribute('class', 'middle');
+    a[count].setAttribute('class', 'right');
+    a[count-2].setAttribute('class', 'left');
+
+    }else if(count==1){
+        a[0].setAttribute('class', 'middle');
+        a[1].setAttribute('class', 'right');
+        a[2].setAttribute('class', 'left');
+    }else if(count==3){
+        a[2].setAttribute('class', 'middle');
+        a[0].setAttribute('class', 'right');
+        a[1].setAttribute('class', 'left');
+    }
+
+}
+
+//手动轮播,index:用来记录用户点击的是第几个黑点的下标,
+//下标从零开始
+
+//定义函数完成对四个小圆点的点击事件的绑定
+function bind_click() {
+    let circles = document.querySelectorAll('a');
+    for(let i =0; i<circles.length;i++){
+        circles[i].onclick = function () {
+            count = i+1;
+            // alert(count);
+            //开启手动轮播
+            // shou_lun(i);
+            //修改指定的小圆点
+            change_circle(count);
+
+
+        }
+    }
+}
+
+</script>
+</body>
+</html>

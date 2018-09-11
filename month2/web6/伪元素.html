@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+    <style type="text/css">
+        /*
+            标签的伪元素选择器
+        */
+        .mark::after{
+            /*
+            after:在指定标签内容的最后边插入一段文本内容
+            */
+            content: '床前明月光';
+        }
+
+        .mark::before{
+            /*
+            before:在指定标签的最前面插入一段文本内容
+            */
+            content: '唐诗宋词';
+        }
+        .mark:first-letter{
+            /*
+                first-letter:选择标签中文本内容开头的第一个汉字或第一个字母
+            */
+            font-size: 50px;
+            color: #b2b1ef;
+        }
+        /*first-line: 选择指定标签中文本内容的第一行*/
+        .mark:first-line{
+            color: slateblue;
+        }
+        /*
+            selection 代表鼠标在网页中所选择的区域
+        */
+        .mark::selection{
+            background-color: red;
+            color: #b2b1ef;
+        }
+    </style>
+</head>
+<body>
+    <div class="mark">
+        静夜思
+        七夕将近，说到这个节日
+
+不约而同会想到鹊桥相会
+
+谈及浪漫
+
+古人也是有着最熟知的诠释
+
+与西方速度与激情式的爱情体验相比
+
+中国的爱情，更崇尚细水长流
+
+蕴含着不同层次的爱情体验
+
+    </div>
+  <div class="mark1">
+        静夜思
+        七夕将近，说到这个节日
+
+不约而同会想到鹊桥相会
+
+谈及浪漫
+
+古人也是有着最熟知的诠释
+
+与西方速度与激情式的爱情体验相比
+
+中国的爱情，更崇尚细水长流
+
+蕴含着不同层次的爱情体验
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        /*通配选择器*:代表所有的标签,通配选择器的优先级最低,因此该选择器一般用来完成标签样式的重置*/
+
+        }
+
+        .mark{
+
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: #7923ca;
+            border-radius: 20px;
+            box-shadow: 0 0 30px black;
+
+        }
+        .mark h1{
+            /*
+            后代选择器: 由id,class,标签名等基本选择器通过空格组合而成的具有后代关系的一种选择器
+            该选择器可以选择指定标签里面的所有跟该标签构成后代关系的后代标签
+            */
+            color: #1cfafa;
+            margin-bottom: 20px;
+        }
+        .mark p {
+            color: white;
+
+            font-size: 20px;
+            text-shadow: 0 0 10px red;
+        }
+        .mark>p{
+            /*子代选择器: id,class 或标签名选择器用过">"链接形成的具有父子选择器
+            成为子代选择器,子代选择器一般适用于仅对某一个标签中的自带标签设置css样式
+            */
+        }
+        .mark h1, .mark p{
+                     /*群组选择器: id class.标签名,后代或自带选择器通过","连接,形成的
+                     一种具有并列关系的选择器.群组选择器一般用来实现多个标签相同css代
+                     码的合并,减少css代码的冗余
+                     */
+                     font-family: "楷体" ;
+        }
+        #title{
+            font-family: "微软雅黑";
+        }
+        /*选择器的优先级划分
+        id选择器 100
+        class选择器 10
+        标签名选择器 1
+        通配选择器 0
+        后代/子代选择器优先级 = 基本选择器优先级的和群组选择器优先级:
+        按照","分割,分别计算
+        注意:如果标签的css样式后面直接添加!important,此时该css样式的优先级
+        直接为1000即最高优先级,该操作只有当上面的方式无法完成时才能使用(
+        一般不建议使用)
+        */
+    </style>
+</head>
+<body>
+
+    <div class="mark">
+        <h1 id="title">饮酒</h1>
+        <p>结庐在人境，而无车马喧。</p>
+        <p>问君何能尔？心远地自偏。</p>
+        <p>采菊东篱下，悠然见南山。</p>
+        <p>山气日夕佳，飞鸟相与还。</p>
+        <p>此中有真意，欲辨已忘言。</p>
+        <p><img src="img/heihun.jpg" alt=""></p>
+    </div>
+</body>
+</html>

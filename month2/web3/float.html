@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style type="text/css">
+        *{
+
+            padding: 0;
+            margin: 0;
+
+        }
+        .father{
+            width: 500px;
+            border: 1px solid black;
+            overflow:hidden;
+        }
+        .kind1{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+            /*标签的浮动分为两个过程,
+            首先是设置浮动标签,向上浮动到最上边,
+            之后根据标签的float值决定标签向左还是向右浮动
+            注意:标签向上浮动时会参考上一个标签的浮动原则,
+            如果上一个标签是向右浮动,此时浏览器会自动检测
+            上一个标签的左侧空隙是否能够放下当前标签,如果能,
+            该标签会移动到上一个标签的上边界位置处,如果不能
+            ,该标签会向上移动到上一个标签的下边界位置处
+            与此类似,如果上一个标签向左浮动,此时浏览器会自
+            动检测标签右侧是否能放的下当前标签,如果能,该标签
+            则向上移动到上一个标签的上边界位置处,如果不能
+            当前标签则停留在上一个标签的下边界位置处
+
+            */
+            /*设置单行文本正在竖直方向上垂直居中*/
+
+            line-height: 100px;
+            color: white;
+        }
+    .kind2{
+        width: 300px;
+        height: 200px;
+        background: #7923ca;
+        color: white;
+        float: left;
+        text-align: center;
+        line-height: 200px;
+    }
+        .kind3{
+            width: 200px;
+        height: 100px;
+        background: #1aca3d;
+        color: white;
+        float: right;
+        text-align: center;
+        line-height: 100px;
+        }
+        .kind4{
+            width: 200px;
+            height: 500px;
+            background: #3541ca;
+            color: white;
+            float: right;
+            text-align: center;
+            line-height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="kind1">1</div>
+    <div class="kind1">2</div>
+    <div class="kind1">3</div>
+    <div class="kind1">4</div>
+    <div class="kind1">5</div>
+    <div class="kind2">6</div>
+    <div class="kind3">7</div>
+    <div class="kind4">9</div>
+    <div class="kind2">8</div>
+
+    <div class="kind2">10</div>
+</div>
+
+</body>
+</html>

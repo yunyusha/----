@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .mark{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mark"></div>
+    <div class="mark">
+        <p class="mark"></p>
+    </div>
+    <div class="mark">
+        <p class="mark"></p>
+    </div>
+    <div class="mark">
+        <p class="mark"></p>
+    </div>
+    <div class="mark">
+        <p class="mark"></p>
+    </div>
+<script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        /*
+        * each,jQuery对象内置的操作,用来遍历jQuery所获取的每一个DOM元素
+        * */
+        $('.mark1').each(function (index,ele) {
+            $(ele).append();
+            console.log(index)
+        });
+        /*首先根据index中指定的选择器选择所用满足条件的标签,之后获
+        *取指定标签在结果集的位置下标
+        *
+        **/
+        // alert($('p').index('.mark'));
+        // $('.mark').data('flash','静夜思');
+        // alert($('.mark').data('flash'))
+        /*
+        * css():jQuery中用来修饰标签css样式或者获取标签css样式,注意该方式
+        * 修改的css样式是通过行间样式完成的
+        * */
+        $('.mark').css({
+            width:'200px',
+            height:'200px',
+            backgroundColor:'rgba(0,0,0,0.5)',
+            border:'1px solid red',
+        });
+        //获取样式(css既可以获取通过行间样式添加的样式,也可以获取通过
+        // 其他方式添加的样式)
+        alert($('.mark').css('width'));
+    </script>
+</body>
+</html>

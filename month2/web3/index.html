@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 600px;
+            background-color: BLUE;
+            /*清除浮动造成的影响*/
+            /*overflow: hidden;*/
+        }
+        .son1,.son2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+            color: white;
+        }
+        .son2{
+            background-color:green;
+        }
+        .son2 img{
+            width: 200px;
+            height: 200px;
+        }
+        .empty{
+            clear: right;
+        }
+        .father:after{
+            display: block;
+            height: 0;
+            content: 'zzzzz';
+            visibility: hidden;
+        }
+        /*
+        浮动布局: 主要解决多个块级元素在一行显示的问题,因此该布局主要应用于pc端布局
+        浮动布局的操作: 首先需要在一行显示的块级标签内部设置float:left/right;其次需要通过一些常用的操作清除浮动造成的影响
+        浮动的问题:浮动的元素会脱离父级元素,造成父级元素高度塌陷,从而影响网页下面的布局
+        清浮动的方法:
+        1:直接在浮动元素的父级元素中设置overflow为hidden
+        2:通过在浮动元素的后面添加空元素实现清浮动的操作
+        3:通过伪类after配合zoom完成清浮动操作
+        */
+
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">静夜思</div>
+        <div class="son2"><img src="img/heihun.jpg" alt=""></div>
+        <!--<div class="empty"></div>-->
+    </div>
+</body>
+</html>

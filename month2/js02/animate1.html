@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mark{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="mark"></div>
+<script type="text/javascript">
+     /*
+     * JS动画的核心为计时器
+     * setInterval(fun,time):fun计时器需要执行的具体操作,time计时器
+     * 间隔的时间(以毫秒为单位)
+     *
+     * setTimeout(fun,time):参数作用同上,区别是setTimeout仅仅只执行一次,
+     * 但是setInterval则可以实现连续不停的执行
+     * 注意:JS修改标签样式,使用的是标签的style属性,属于行间样式的
+     * 修改,另外如果样式由多个单词组成,此时多个单词之间使用小驼峰
+     * 结构
+     * */
+     window.onload = function (ev) {
+        let mark = document.querySelector('.mark');
+        //获取mark标签的宽度和高度
+         let style_mark = window.getComputedStyle(mark);
+         let h = parseInt(style_mark.height);
+         let w = parseInt(style_mark.width);
+         //记录当前递增的次数
+         //定义变量存储每一次标签递增的数值
+         let offset = 2;
+         //定义变量存储标签起始的宽度和高度
+         let count = 0;
+        let time1 = setInterval(function () {
+            w += 2;
+            h += 2;
+            //修改标签的宽高(行间样式修改)
+            mark.style.width = w+"px";
+            mark.style.height = h+"px";
+            //判断标签宽高是否已到指定尺寸
+            if(w >=400 ){
+                //停止计数器操作
+                clearInterval(time1);
+            }
+            count++;
+     }, 1)//设置计时器
+      }
+</script>
+</body>
+</html>

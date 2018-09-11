@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 数组: 具有连续数据存储规律的容器, 等价于Python中的列表
+    * */
+    let arr1 = [1, 'aa', '2234','sdd',225,'sha','shassha'];
+    console.log(arr1[4]);
+    //获取数组中的元素个数
+    console.log(arr1.length);
+//    向数组末尾添加一个元素
+    arr1.push('xiaoshasha');
+    console.log(arr1);
+
+//    向数组中开头位置添加元素
+    arr1.unshift('yun');
+    console.log(arr1);
+
+//    删除数组中最后一个元素 pop()将数组中最后一个位置的元素取出并且删除该元素
+    console.log(arr1.pop());
+    console.log(arr1);
+    //删除数组中第一个位置的元素
+    console.log(arr1.shift());
+    console.log(arr1);
+//    数组切片操作
+    console.log(arr1.slice(0, 2));
+    console.log(arr1);
+//    完成数组指定位置元素的删除,添加或替换
+    arr1.splice(4,0,'十多个');
+    console.log(arr1);
+//    将数组中的元素按照指定格式,拼接成对应的字符串
+    var arr2 = ['王冰冯','小泽玛利亚'];
+    console.log(arr2.join("="));
+//    数组排序和数组的反转
+    var arr3 = [1,3,2,5,4,3,1];
+    console.log(arr3.sort(function (num1,num2) {return num1>num2;}).reverse());
+
+//    js中对象的操作
+    let obj = {"name":"xiaoshasha","age":20,"sex":"nv"};
+    //获取对象数据
+    console.log(obj.name);
+//    删除对象中指定的字符串
+    delete obj.name;
+    obj.birth = "2017-08-09";
+    console.log(obj)
+</script>
+</body>
+</html>

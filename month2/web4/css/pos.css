@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 1000px;
+}
+.father{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+    border: 1px solid black;
+}
+.son {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: blue;
+    /*
+
+    设置当前黄色标签定位时的参照物
+    position: 用来设置标签定位时的参照物
+    relative: 相对定位,该属性设置的参照物是以当前定位标签
+    未定位前的初始位置为参照物
+    absolute:绝对定位,如果父级标签的position为relative或absolute时
+    此时标签的参照物即为其父级标签.但是如果父级标签没有设置position为
+    relative或absolute,此时标签的参照物就以body为参照物
+
+    fixed: 固定定位,该定位以窗口为参照物,可以实现标签的悬浮效果
+
+    注意:如果标签使用的定位是absolute或fixed此时标签会脱离其父级标签
+
+    */
+    position: fixed;
+    /*设置当前黄色标签与参照物的距离*/
+    left: 10px;
+    top: 10px;
+}

@@ -1,0 +1,40 @@
+.foot{
+    background: #e0e0e0;
+    overflow: hidden;
+    margin-top: 30px;
+
+}
+ul{
+    list-style: none;
+    font-size: 12px;
+    border-left: 1px solid #bcbcbc;
+    padding-left: 15px;
+}
+.foot div{
+    padding-right: 15px;
+}
+.foot div, .foot ul{
+    width: 50%;
+    float: left;
+     box-sizing: border-box;
+}
+
+.foot .link{
+    text-align: center;
+ }
+.foot .link img{
+    width: 30px;
+}
+ul li{
+    margin-bottom: 5px;
+    color: #666;
+    text-shadow: 1px 1px 2px white;
+}
+@media only screen and (max-width:600px){
+    .foot div{
+        padding-left: 2%;
+    }
+     .foot ul{
+        padding-left: 2%;
+    }
+}

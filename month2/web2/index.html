@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .father{
+            width: 600px;
+            background: blue;
+            margin: 0 auto;
+            border: 50px gold solid;
+            margin-bottom: 20px;
+        /*
+        当设置某一个块级元素的上下margin是,如果margain作用与当前标签和其父级标签,
+        此时父级标签必须有边框
+        */
+            /*当设置两个相邻块级元素上下外边距时,两个相邻元素的外边距
+            会出现重叠现象,此时外边距以值比较大的一方进行显示*/
+        }
+        .father1{
+
+            height: 200px;
+            width: 600px;
+            background: blue;
+            margin: 0 auto;
+            margin-top: 20px;
+
+        }
+        .mark{
+            height: 200px;
+            width: 200px;
+            background: red;
+            /*实现块级元素在水平方向上相对其父级元素居中*/
+            margin: 200px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="mark">
+        </div>
+    </div>
+    <div class="father1"></div>
+</body>
+</html>

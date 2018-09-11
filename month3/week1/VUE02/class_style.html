@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .blue{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+    在Vue中如果想要完成标签class属性值的绑定,可以通过三种方式:
+    字符串: 直接将指定字符串的内容绑定给标签
+    数组: 完成class属性多个属性值的绑定
+    对象: 将对象的键绑定给属性,但是前提是键对应的属性值返回结果必须是true
+-->
+    <div id="root1">
+        <!--<div :class="{'red','blue']}"></div>-->
+        <div :style="{width:w+'px', height:10*w+'px',backgroundColor: color}"></div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+    let vm1 = new Vue({
+        el:"#root1",
+        data:{
+            isActive:false,
+            w:10,
+            color:'red',
+            style:{
+                width:'100px',
+                height:'100px'/            }
+        }
+    })
+</script>
+</html>

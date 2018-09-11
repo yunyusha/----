@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .father {
+            width: 500px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .kind1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            text-align: center;
+            /*设置单行文本在竖直方向上垂直居中*/
+            line-height: 100px;
+            color: white;
+
+            float: left;
+        }
+        .kind2 {
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            float: left;
+            text-align: center;
+            line-height: 200px;
+        }
+        .kind3 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        .kind4 {
+            width: 300px;
+            height: 100px;
+            background-color: gold;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        .kind5 {
+            width: 200px;
+            height: 300px;
+            background-color: black;
+            color: white;
+            line-height: 300px;
+            text-align: center;
+            float: right;
+        }
+        .kind6 {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        /*
+        标签的浮动分为两个过程：首先是设置浮动标签向上浮动到最上边，之后根据标签的float值决定标签是向左还是向右浮动
+        注意：标签在向上浮动时会参考上一个标签的浮动原则，如果上一个标签是向右浮动，此时浏览器会自动检测上一个标签的左侧空隙是否能放下当前标签，如果能，该标签会移动到上一个标签的上边界位置处，如果不能，该标签则向上移动到上一个标签的下边界位置处。与此类似，如果上一个标签向左浮动，此时浏览器会检测标签的右侧是否能放的下当前标签，如果能，该标签则向上移动到上一个标签上边界位置处，如果不能，当前标签则停留在上一个标签的下边界位置处。
+        */
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="kind1">1</div>
+        <div class="kind1">2</div>
+        <div class="kind1">3</div>
+        <div class="kind1">4</div>
+        <div class="kind1">5</div>
+        <div class="kind2">6</div>
+        <div class="kind3">7</div>
+        <div class="kind5">9</div>
+        <div class="kind4">8</div>
+        <div class="kind6">10</div>
+    </div>
+</body>
+</html>

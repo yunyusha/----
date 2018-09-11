@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        form{
+            width: 350px;
+            margin: 10px auto;
+        }
+        form span{
+            width: 300px;
+            letter-spacing: 2em;
+        }
+        form input[type='text']{
+            width: 250px;
+            height: 25px;
+
+        }
+        form input[type='radio']{
+            margin: 0 10px;
+        }
+        form input[type='submit']{
+            width: 100px;
+            height: 30px;
+            border:1px solid rgba(0,0,0,0.7);
+            box-show:inset 0 0 10px rgba(97, 97, 97, 0.5);
+            background: white;
+            color: #7923ca;
+        }
+        .cards{
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .cards .card{
+            margin:0.5% 0;
+            color: blue;
+            display: block;
+            width: 33%;
+            border:1px solid rgba(0,0,0,0.7);
+            box-sizing: border-box;
+            box-shadow:inset 0 0 10px rgba(0,0,0,0.5);
+            padding: 20px 40px;
+            float: left;
+        }
+        .cards .card:nth-child(3n-1){
+            margin: 0.5%;
+        }
+        .cards .card img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            float: left;
+        }
+        .cards .card div{
+            width: 50%;
+            float: right;
+        }
+        .cards .card h3{
+            margin-top: 10px;
+        }
+        .cards p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root1">
+<form action="">
+    头像链接: <input type="text" v-model="photo"><br><br>
+    <span>姓</span>名: <input type="text" v-model="name"><br><br>
+    <span>性</span>别: <input type="radio" value="男" v-model="sex">男
+    <input type="radio" value="女" v-model="sex">女 <br><br>
+    <span>电</span>话: <input type="text" v-model="tel"><br><br>
+    <input type="submit" value="提交" @click.prevent="submit">
+</form>
+    <div class="cards">
+            <a class="card" href="#" v-for="obj in contacts" :key="obj.id">
+                <img :src="obj.photo" alt="">
+                <div class="infor">
+                    <h3>{{obj.name}}</h3>
+                    <p>{{obj.sex}}</p>
+                    <p>{{obj.tel}}</p>
+                </div>
+            </a>
+        </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+    let vm1 = new Vue({
+        el:"#root1",
+        data:{
+            photo:'',
+            name:'',
+            tel:'',
+            sex:'',
+            count:0,
+            contacts:[]
+        },
+        methods:{
+            submit:function (event) {
+                this.count++;
+                let obj = {'photo':this.photo,
+                    'name':this.name,
+                    'sex':this.sex,
+                    'tel':this.tel,
+                    'id':this.count
+                };
+                this.contacts.unshift(obj);
+                // event.preventDefault();
+                console.log(this.photo,this.name,this.tel,this.sex);
+            }
+        }
+    });
+</script>
+</html>

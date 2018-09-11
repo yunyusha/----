@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+    <style type="text/css">
+        #timu{
+            /*id选择器:首先在body标签中为指定标签添加id属性并且设置id属性值,之后通过#属性值方式在样式表中选择指定的标签并且设置对应的css样式
+            注意同一个id属性值在同一个页面只能出现一次,因此id选择器经常用来选择唯一的一个标签
+            注意:在选择器使用过程中一般遵循class优先于标签名,标签名优先于id选择器
+            */
+            width: 200px;
+            height: 200px;
+            /*color: white;*/
+            background-color: #3cff8a;
+            border:10px solid #ff7211;
+            /*padding: 设置标签和标签内容之间的距离即为内边距
+               padding一般存在四种情况:
+               一值:此时代表上下左右是相同的
+               二值:1上下2左右
+               三值:1上2左右3下
+               四值:上右下左
+      */
+            padding: 20px 40px;
+            margin: 20px 40px;
+            /*
+                margin,padding在开发中一把应用与下面的场景
+                margin:控制标签和相邻标签之间的距离
+                padding:控制当前标签和标签中内容之间的距离
+            */
+        }
+        span{
+            background-color: blue;
+            color: white;
+        }
+        /*
+        每一个标签在浏览器中都会被看成是一个盒子模型,每一个盒子模型都包含四部分,分别是margin(外边距),border边界,padding内边距,content内容层,
+        默认情况下通过width和height调节标签的宽度和高度,此时一般只会影响标签的content部分的尺寸
+        */
+    </style>
+</head>
+<body>
+    <div id="timu">静夜思</div>
+    <span>我是span标签</span>
+
+
+</body>
+</html>

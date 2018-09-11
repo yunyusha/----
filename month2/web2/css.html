@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        span{
+
+            color: #7923ca;
+            font-size: 30px;
+        }
+        .mark{
+            padding: 20px 0px;
+            background:lightgreen;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 40px;
+            /*
+            text-align直接修饰块级元素,实现块级元素内部的文本/行属性标签/行内块属性标签
+            在水平方向上的对齐方式
+                left: 水平居左(默认)
+                right:水平居右
+
+
+            */
+                /*
+                设置文字阴影:
+                值一:阴影水平方向上的偏移,正值向右偏移,负值向左偏移
+                值二:阴影竖直方向上的偏移,正值向下偏移,负值向上偏移
+
+                */
+                text-shadow: 2px 2px 9px black;
+                /*设置标签阴影
+                box-shadow:inset x y blur color
+                inset代表阴影的偏移方向是从标签内部偏移,如果不写inset此时阴影从标签的四周向外偏移
+                x:阴影沿水平方向的偏移,正负值和上面相同
+                y:阴影沿竖直方向的偏移,同上
+                blur:阴影的模糊程度
+                color:阴影颜色
+                */
+            box-shadow:  0px 0px 5px red;
+        }
+        img{
+            width: 200px;
+            /*
+            设置标签边角的裁剪距离,数据分为以下5种情况
+            1个值:此时代表四个角裁剪幅度一样
+            2个值:分别代表(左上,右下)和(右上,左下)
+            3个值:分别代表左上和(右上,左下)和右下
+            4个值:分别代表左上,右上,右下和左下
+            8个值:分为两组,第一组代表上下两条边的裁剪距离从左下开始,顺时针划分.第二组代表左右两条边的裁剪距离
+            从左上角按照顺时针划分
+            */
+            border-radius: 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="mark">
+        静夜思
+        <br>
+    <span>床前明月光,地上鞋两双</span>
+        <br>
+    <span>举头望明月,低头思故乡</span>
+        <br>
+        <img src="img/血.png" alt="">
+    </div>
+</body>
+</html>
+
+
+
+
+

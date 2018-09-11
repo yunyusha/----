@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js部分开始</title>
+</head>
+<body>
+<script type="text/javascript">
+    {
+        /*
+        *
+        * 变量的定义
+        * var 定义的变量属于全局变量
+        * let定义的变量属于某一个作用域的临时变量
+        * const定义的变量会被当成常量运行,注意伪类
+        * 区分变量和常量,常量一般使用大写方式,同时常量
+        * 在定义时就必须为器赋予对应的数据
+        *
+        * 注意: 如果变量或常量再定义是没有给定对应的
+        * 初始值,此时默认的值为undefined
+        *
+        * */
+
+        let name = "xiaocaicai";
+        let age = 30;
+        const PI = 3.14;
+    }
+    /*
+    *  +,-,*.,/,%
+    *  注意 : 加法可以用来完成字符串的拼接
+    *  ++,--:
+    *  单目运算符,跟在一个变量的后边或者前边,注意如果++(--)放在变量的
+    *  前边,此时变量先完成自增或者是自减,后使用变量中的值.如果++(--)
+    *  放在变量的的后面,此时先使用变量中的值,后完成对变量值的自增或自减
+    * 双目运算符: 运算过程中需要两个变量的参与
+    * 单目运算符: 运算过程中需要一个变量的参与
+    * */
+    var a = 10,b = 20;
+    console.log(++a);
+/*
+*符合运算符: +=, -=, /=, %=, *=
+*
+*
+* 数据的输出
+*
+* alert("a")通过浏览器提示框进行输出
+* console.log('aa'):通过浏览器自带的终端输出
+* document.write('aaa'):直接在网页中输出内容
+* */
+var content = "静夜思";
+
+/*
+* ES6新增``字符串,允许开发人员定义任意结构的字符串,并且在字符串中可以通过$(变量名)
+* 的形式将外界变量或常量中的数据引入到字符串结构中
+* */
+var mark = `<h1>
+            <a href="#">$(content)</a>
+            <p>窗前明月光,</p>
+            <p>窗前明月光,</p>
+            <p>窗前明月光,</p>
+            </h1>`;
+document.write(mark);
+/*
+* 字符串操作
+* */
+let name1 = 'xiacaicai';
+    //获取字符串长度
+    console.log(name1.length);
+    //获取指定字符的索引
+    console.log(name1.indexOf('c'));
+    //设置字符串大小写结构
+    console.log(name1.toUpperCase());
+    console.log(name1.toLowerCase());
+    //字符串拼接  可拼接多次
+    var substr = "啊沙发沙发";
+    console.log(name1.concat(substr));
+    //字符串分割(切片)(需要指定起始和结束位置,包含起始位置但是不包含结束位置)
+    console.log(name1.slice(-5,-2));
+    //    字符串分割(按照指定样式分割)
+    let infor = "My name is xiaocai, I am ";
+    console.log(infor.split(/[,|\s]/));
+//    在js中使用定义正则表达式需要通过//进行定义
+//    js中正则表达式中g代表全局匹配
+
+    let reg = /d{11}$/;
+    //match:字符串操作,用来根据正则表达式完成指定内容的筛选,最终将匹配到
+    //的结果 以数组的形式返回
+    console.log("5444444444444444444444444".match(reg));
+//    search 用来判定字符串中是否含有给定的内容,判断时,可以按照给定
+//    的子串判定,也可以根据正则表达式判定.如果含有返回对应下标,如果没有
+//    返回-1
+    console.log('fffffffff123'.search(/\d+/g));
+
+//  replace:根据用户提供的内容,用新内容进行替换
+    console.log('共产党万岁,!!!!'.replace('共产党','*'))
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+</head>
+<body>
+    <div id="root">
+        <click-button :style1="{width:'100px',height:'205px',background:'red'}" :count="2"></click-button>
+        <click-button :count="2"></click-button>
+        <click-button :count="2"></click-button>
+        <click-button :count="2"></click-button>
+        <click-button :count="2"></click-button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+    //全局组件
+    Vue.component('click-button',{
+
+        props:['style1','count'],
+        template:`<button @click="click" :style="style1">当前点击是第{{countIncress}}次</button>`,
+        methods:{
+            click:function () {
+                this.count++;
+            }
+        },
+        computed:{
+            countIncress:function () {
+                return this.count*10;
+            }
+        },
+        watch:{
+            count:function (newV,oldV) {
+                alert(newV+""+oldV);
+            }
+        }
+    });
+    let vm = new Vue({
+
+        el:"#root",
+        components:{
+            'btn-click':A
+        }
+    })
+</script>
+</html>

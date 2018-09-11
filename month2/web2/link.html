@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a标签</title>
+    <style type="text/css">
+        /*伪类选择器:
+        负责选择指定标签所处的不同状态
+        :link:代表超链接标签之前没有被点击的状态
+        :honver:代表鼠标悬停在标签上的状态,注意该状态所有标签都有
+        :active:代表鼠标按下但是没有松手的状态
+        :visited:代表鼠标被点击过的状态
+        */
+        a:hover{
+            color: black;
+        }
+        a{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+超链接标签的锚点: 本质上是通过在网页中指定的位置设置标签的id属性值,之后在超链接标签上通过设置
+href="#id值",完成用户点击之后指定位置的查找
+    锚点的作用: 可以帮助用户从网页中众多的内容中快速查找用户感兴趣的内容
+    锚点一般适用于网页内容比较多的网站
+-->
+        <a href="#title">春晓</a>
+        <h1>静夜思</h1>
+        <p>床前明月光,地上鞋两双</p>
+        <p>举头望明月,低头撕裤裆</p>
+        <p><img src="img/血.png" alt=""></p>
+        <h1 id="title">春晓</h1>
+        <p>春眠不觉晓,处处蚊子咬</p>
+        <p>夜来风雨声,菊花肿多少</p>
+        <p><img src="img/血.png" alt=""></p>
+</body>
+</html>

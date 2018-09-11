@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box_sizing</title>
+    <style type="text/css">
+    .mark{
+        width: 405px;
+        height: 200px;
+        background: green;
+    }
+    .mark1{
+        width: 200px;
+        height: 200px;
+        background: red;
+        color: white;
+        padding:5px ;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+            /*
+            display:inline(将标签转换成行属性标签)
+            display:block(将标签转换成块属性标签)
+            display:inline-block(将标签转换成行内块属性标签)
+            行内块属性标签: 该标签可以像行属性标签一样在一行显示,也可以像块属性标签一样通过
+            width height修改标签的宽高
+            */
+            /*
+                对于标签来讲,浏览器在加载标签时会一般按照标签的标准和模型结构加载,此时width和height指代标签
+            内容层的高度和宽度时可以通过bx-sizing:border-box;将指定的标签转换成怪异盒模型结构,此时的width和
+            height则包含三部分内容分别是border+padding+content三部分
+                注意,不论是标准盒模型还是怪异盒模型,在计算盒模型体积时都包含(margin+border+padding+content)
+            */
+            display: inline-block;
+        }
+        .mark2{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            color: white;
+             display: inline-block;
+        }
+    </style>
+</head>
+<body>
+   <div class="mark">
+        <div class="mark1">
+        认购的股份随后会被雷劈魄力没明白
+        </div>
+        <div class="mark2">
+        模特公司的纯牛奶农机局欧赔扣扣
+        </div>
+   </div>
+</body>
+</html>

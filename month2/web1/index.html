@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style  type="text/css">
+        /*css样式用来设置网页中指定标签标记内容的样式,为了能够唯一找到指定的标签,需要对使用对应的选择器*/
+        /*标签名选择器: 使用标签的名字充当选择器,作用是选择网页中所用名字位对应名字的标签*/
+        div {
+            /*修改文字颜色*/
+            color: red;
+            font-size: 20px;
+            /*设置文字类别*/
+            font-family: "隶书";
+            /*设置字体的粗细程度*/
+            font-weight: 300;
+            /*设置文字的下划线(上划线overline,下划线underline,贯穿线line-though,无线none)*/
+            text-decoration: overline;
+            /*设置文字间距 只做用于文字的右侧部分*/
+            letter-spacing: 11px;
+        }
+        p{
+            /*设置文字首行缩进2个字符*/
+            text-indent: 2em;
+        }
+        a{
+            text-decoration: none;
+        }
+        .kind1{
+            color: blue;
+            /*设置标签背景颜色*/
+            background-color: red;
+            /*设置标签的宽度*/
+            width: 200px;
+            /*设置标签高度*/
+            height: 200px;
+            /*设置标签的边框 边框样式颜色宽度*/
+            border: 5px dashed black;
+        }
+    </style>
+</head>
+<body>
+<!--div标签为块级标签,内容显示默认独占一行
+span标签:行级标签,内容在显示时默认在一行显示
+HTML5中标签按照显示的不同分为块级标签和行级标签,其中一个区分方式是看是否独占一行
+div在开发过程中一般充当网站的结构,用来包裹网站的内容和其他内容之间保持一定的独立性
+span:一一般直接标记文本内容,负责区分特殊的文本信息
+-->
+<!-- class选择器:类别选择器,首先需要在body中为对应的标签设置
+class属性并且设置相同的属性值,之后再css样式中使用".属性值来选择对应的标签
+ class一般作用于具有相同css样式的一类标签,该类标签可以是不同名字的标签也可以是相同名字的标签
+ 比标签名选择器更加灵活
+
+ 行属性标签和块属性标签的区别
+ 1:行属性标签内容在一行显示,块属性标签内容独占一行
+ 2:行属性标签宽高由内容决定,不能通过width和height修改.块属性标签可以
+ 3:行属性标签内部只能嵌套行属性标签,块属性标签内部可以嵌套行或块属性标签..
+
+"-->
+<div class = "kind1">静夜思</div>
+<div class = "kind1">静夜思</div>
+<div class = "kind1">静夜思</div>
+<span class = "kind1">静夜思</span>
+<span class = "kind1">静夜思</span>
+<span class = "kind1">静夜思</span>
+<!--图片标签
+行属性标签,其中src属性用来设置图片的加载路径的
+alt 当图片无法加载时给用户的额外文字
+title 当鼠标放在图片时显示的额外文字,一般用于网页logo
+-->
+<img src="img/血.png" alt="血缘诅咒">
+<!--用来完成指定页面的跳转
+href: 标签属性,存储需要跳转的页面链接
+target: 标签属性,用来决定新页面是否以新窗口的形式打开,默认新页面在
+原页面的窗口打开
+超链接标签属于行级标签
+-->
+<a href="http://www.baidu.com" target="_blank"  >百度一下</a>
+<!--标题文字
+h1-h6用来充当网页的标题部分,一般情况下标题标签我们只用前三个,最多用到第四个.标题标签属于块级标签
+-->
+<h1>1级标题</h1>
+<h2>2级标题</h2>
+<h3>3级标题</h3><h4>4级标题</h4><h5>5级标题</h5><h6>6级标题</h6>
+<!--
+列表标签
+分为有序列表ol和无序列表ul每一种列表都需要和li配合使用,一般情况下在开发中
+列表我们经常使用无序列表
+注意:ul ol 和li都属于块级标签
+-->
+<ul>
+    <li>列表项1</li>
+    <li>列表项2</li>
+    <li>列表项3</li>
+    <li>列表项4</li>
+    <li>列表项5</li>
+    <li>列表项6</li>
+</ul>
+<ul>
+    <li>列表项1</li>
+    <li>列表项2</li>
+    <li>列表项3</li>
+    <li>列表项4</li>
+    <li>列表项5</li>
+    <li>列表项6</li>
+</ul>
+<!--段落标签p
+用来包裹一段文字(图片,视频)内容代表一段数据,默认会和其他段落保持一定的距离
+注意:p标签属于块级标签
+-->
+<p>ryhfggnzfgjnhmtdgghdku,jmmhjsjyjbydgnyjsxthxfjufy</p>
+<!--视频标签video
+属性:con控制视频是否在加载完成后自动播放,muted控制视频是否以静音状态播放ctrols控制视频是否显示播放控件,loop控制视频是否循环播放,
+autoplay控制视频是否在加载完成后自动播放,muted控制视频是否以静音状态播放
+注意: video标签一般需要和source标签配合使用,source标签用来选择不同视频资源,可以实现不同浏览器对不同格式视频的适配
+-->
+<video src="source/1.mp4" controls loop>aaaa
+    <source src="source/1.mp4" type="video.mp4">
+    <!--<source src="source/1.ogg" type="video.ogg">-->
+    <!--<source src="source/1.webv" type="video.webv">-->
+
+</video>
+<!--audio音频标签同video
+embed: 用来将指定的动画,视频,音频作为一个对应插件嵌入到页面指定的位置
+video sourceaudio embed 为h5新增标签对于ie9以上浏览器兼容,都属于行属性标签
+-->
+</body>
+</html>
+
+
+

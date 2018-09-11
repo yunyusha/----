@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sss</title>
+    <style type="text/css">
+        a[href] {
+            color: red;
+        }
+        /*
+        属性选择器:根据标签指定的属性获取对应的标签
+        */
+        /*}*/
+        /*input[type]{*/
+            /*width: 300px;*/
+            /*height: 50px;*/
+        /*}*/
+        /*选择具有指定属性并且属性值为指定值的标签*/
+        input[type="text"]{
+            width: 200px;
+            height: 300px;
+        }
+        /*
+        获取标签属性中包含指定词汇的标签
+        单词之间必须用空格隔开
+        */
+        input[name ~= "user"]{
+            border: 5px solid black;
+        }
+        /*选择以指定内容开头的属性值对应的标签,
+        开头的内容可以不必是完整的单词*/
+        input[name ^="ass"]{
+            width: 200px;
+            height: 50px;
+            border-color: #4ffcff;
+        }
+        /*获取标签中属性值包含给定内容的标签,包含的内容
+        可以不必是一个单词
+        */
+        input[name*="w"]{
+            background-color: #655bb0;
+        }
+        /*
+            结构选择器:
+            标签1+标签2:相邻兄弟选择器,选择标签1下面的
+            和标签1相邻的标签.如果该标签是标签2,此时应用
+            css样式,如果不是则不使用
+
+            标签1~标签2:统配兄弟选择器,选择标签1下面的
+            所有和标签1在同一级的标签,如果标签是标签2此时
+            使用css,如果不是此时不使用
+
+        */
+        .user~div {
+            border: 3px solid #1aca3d;
+        }
+        /*伪类选择器*/
+    </style>
+</head>
+<body>
+<form action="">
+    <div class="user">
+        用户名: <input type="text" name="username">
+
+    </div>
+    <div>静夜思</div>
+    <div>
+        密码: <input type="password" name="pass-word">
+    </div>
+
+
+</form>
+
+</body>
+</html>

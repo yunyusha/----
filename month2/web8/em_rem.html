@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字尺寸</title>
+    <style type="text/css">
+
+        html,body{
+            font-size: 20px;
+        }
+        .father{
+            /*
+                em和rem都代表文字的相对尺寸,但是注意em是相对于标签的
+            父级标签的文字尺寸进行计算,rem则相对于根标签的文字尺寸而言.
+            */
+            font-size: 2rem;
+        }
+        .son{
+            font-size: 1.4rem;
+        }
+        /*
+            媒体查询是整个移动端布局核心内容:
+            媒体查询的语法结构
+            @media onlyscreen and (min-width:xxx) and (max-width:xxx){
+                选择器{
+                    css样式
+                }
+            }
+
+        */
+        @media only screen and (max-width: 600px){
+            html,body{
+                font-size: 10px;
+            }
+        }
+        @media only screen and (min-width: 600px) and (max-width: 900px){
+            html, body{
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        这是父级标签
+        <div class="son">
+            这是子级标签
+        </div>
+    </div>
+</body>
+</html>

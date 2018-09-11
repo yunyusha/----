@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 70px auto;
+        }
+
+        body{
+
+            /*开启3d渲染模式,该方式只会让当前标签中所有子级元素
+            获得3d渲染
+            */
+            transform-style: preserve-3d;
+            /*用来设置人眼和3d物体之间的观测距离*/
+            perspective: 200px;
+            /*设置人眼观察3d物体的位置*/
+            perspective-origin: 100px center;
+        }
+
+        .mark{
+            width: 300px;
+            height: 300px;
+            background: url("img/heihun.jpg") no-repeat;
+            background-size: cover;
+            /*transition: all 10s;*/
+            animation: move 3s linear alternate ;
+            animation-play-state: paused;
+            /*
+            animation绑定动画:
+              参数1:需要绑定的关键帧动画名字
+              参数2:一次动画需要运行的时间
+              参数3:动画延迟执行的时间
+              参数4:动画播放的速度
+              参数5:动画播放的方向,reverse跟动画默认播放的方向相反,alternate
+            :动画奇数次按照默认方向播放,偶数次反向播放
+            alternate-reverse:动画奇数次反向播放,偶数次按照默认方向播放
+              参数6: 动画播放结束之后标签所处的状态,forwards:动画播放结束
+            之后标签处于动画结束的状态,
+            backwards:设置标签动画结束时处于动画开始的状态
+              参数7: 动画播放时,infinite代表无数次,默认1次
+            */
+            animation-name: move;
+            animation-duration: 2s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        .mark:hover{
+            /*控制动画播放状态
+                running: 开始播放
+                paused:  暂停动画播放
+            */
+            transform: rotateY(4500deg);
+        }
+        /*
+        对于关键帧动画,本质上就是将整个动画过程通过百分比的形式划分成若
+        干部分,在规定的时间内按照顺序分别执行不同的片段的动画
+            使用过程
+         (1)使用@keyframes定义指定名字的关键帧动画,在该动画中分别
+            设置标签需要执行动画的不同的css样式
+         (2)在需要执行该动画的标签中使用animation实现动画的绑定操作
+
+
+        */
+        @keyframes move {
+            from{
+                transform-origin: center center;
+                transform: rotateY(0deg) scale(0.5,0.5);
+            }
+            to{
+                transform-origin: center center;
+                transform: rotateY(360deg) scale(2,2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mark">
+
+
+    </div>
+</body>
+</html>

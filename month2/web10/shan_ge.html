@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        img{
+            width: 100%;
+        }
+        .row{
+            background-color: red;
+            margin: 0 -15px;
+        }
+       .top,  .bottom,.right{
+           padding: 0;
+       }
+        .left .row{
+            padding-right: 5px;
+        }
+        .right{
+            padding-left: 5px;
+        }
+
+    </style>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<!--
+
+        栅格系统的工作原理:
+    首先整个栅格系统需要包含在一个.container或.container-fluid
+    容器中,容器中的直接子元素为,row,.row里面直接嵌套的是对应的列,
+    网页的内容则是直接放在对应列中,注意如果某一个列需要重新划分空间,
+    此时列中直接的子元素只能是.row
+        注意:列栅格系统共划分了4种列的类,
+        分别是
+        .col-xs-xxx: 超小屏幕-手机
+        .col-sm-xxx: 小屏幕-pad
+        .col-md-xxx: 桌面显示器
+        .col-lg-xxx: 超大桌面显示器
+-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-12 top">
+                        <img src="img/5a4b6b107f295.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 bottom" >
+                        <img src="img/5a4b6b107f295.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 right">
+                <img src="img/59bb930590dc6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

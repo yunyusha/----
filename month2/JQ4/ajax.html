@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<form action="">
+    出发站: <input type="text" name="leftTicketDTO.from_station">
+    终点站: <input type="text" name="leftTicketDTO.to_station">
+    出发日期: <input type="date" name="leftTicketDTO.train_date">
+    <input type="hidden" name="purpose_codes" value="ADULT">
+    <input type="submit" value="查询">
+</form>
+</body>
+<!--https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date=2018-08-31&leftTicketDTO.from_station=ZZF&leftTicketDTO.to_station=BJP&purpose_codes=ADULT-->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $('input[type ="submit"]').on('click',function (event) {
+        //阻止提交按钮默认的数据提交事件
+        event.preventDefault();
+        //获取form表单数据  form表单数据的序列化
+        /*
+        * jQuery中为我们提供了两个form表单数据序列化的操作,分别是
+        * serialize():直接将form表单控件中的数据转换成key=value的字符串
+        *
+        * serializeArry():将form表单控件中的数据转换成数组结构,数组中
+        * 每一个元素都是一个由控件的name属性和value属性组成的对象
+        * */
+        let paras = $('form').serializeArray();
+        // console.log(paras)
+        //使用jQuery版的Ajax开始网络请求
+        /*
+        * Ajax:前端向服务器发起请求的一种方式,可以代替form表单完成
+        * 数据向服务器的传递,不同之处是form表单在传递数据时不会出
+        * 先页面的跳转,同时可以直接获取服务器的反馈信息,进而完成页面的
+        * 局部刷新操作
+        *
+        * jQuery提供的Ajax请求方式的参数说明
+        * url:请求的服务器地址
+        * type:请求方式.默认get;
+        * data:前端向服务器传输的数据,默认是字符串类型即key=value&key
+        * =valuse的格式
+        * dataType:设置服务器向前端返回的数据类型,默认为json格式
+        * timeout:设置前端向服务器发起请求的请求超时时间,单位毫秒
+        * success:回调函数,设置当请求成功之后将ajax通过该方法完成
+        * 服务器数据的回传
+        * error;当请求失败之后执行的回调函数
+        * */
+        $.ajax({
+            url:"https://kyfw.12306.cn/otn/leftTicket/query",
+            type:"get",
+            data:paras,
+            dataType:'json',
+            timeout:500,
+            success:function (data) {
+                console.log(data);
+            },
+            error:function (jqXHR) {
+                console.log(jqXHR);
+            }
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,168 @@
+div{
+    margin: 0;
+
+}
+ul{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+        color: black;
+}
+.show{
+    /*float: left;*/
+    clear: both;
+    margin: 0 auto;
+    width: 1200px;
+    background: #ff7211;
+}
+.list1-{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 230px;
+    height: 400px;
+}
+img{
+    margin: auto;
+    width: 230px;
+    height: 230px;
+}
+li{
+    margin-left: -2em;
+    list-style-type: none;
+    text-align: center;
+}
+p{
+
+}
+.list3{
+    width: 1200px;
+    height: 50px;
+    background: #f5f5f5;
+}
+.list8{
+    clear: both;
+}
+#lisr4-1{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    width: 230px;
+    height: 760px;
+}
+#lisr4-1 img{
+    height: 800px;
+}
+.list5 a{
+    font-size: 27px;
+}
+.list5{
+    float: left;
+    width: 1200px;
+    height: 50px;
+    background: #f5f5f5;
+}
+.quan{
+    height: 400px;
+}
+a:link{color: black;
+    text-decoration: none;
+}
+a:visited{color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: #ff7211;
+    text-decoration: underline;
+}
+.jinshui{
+    margin-top: 50px;
+    float: left;
+    width: 230px;
+    height: 200px;
+}
+.jinshui li{
+    height: 200px;
+    margin-left: -10px;
+    /*padding: 0;*/
+    float: left;
+}
+.jinshui p{
+    text-align: left;
+    margin-left: -10px;
+}
+.jinshui img{
+    width: 100px;
+    height:100px;
+}
+#ban1{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 230px;
+    height: 195px;
+}
+#ban2{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 230px;
+    height: 195px;
+}
+#ban3{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 230px;
+    height: 195px;
+}
+#ban4{
+    background: #fafafa;
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 230px;
+    height: 195px;
+}
+.red{
+    color: red;
+        }
+.gray {
+    color: rgba(0,0,0,0.54);
+        }
+.cubic {
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0,0,0,0.7);
+    padding: 7px;
+        }
+ .mh {
+    color: rgba(0,0,0,0.7);
+    font-size: 25px;
+        }
+#lisr1-1 div {
+    margin: 30px 0;
+        }
+#lisr1-1 .time_des {
+    margin-top: 30px;
+        }
+#lisr1-1 img{
+    width: 76px;
+    height: 115px;
+}
+#lisr1-1{
+    text-align: center;
+
+}
+.list8 a{
+    display: block;
+   float: left;
+}
+.list8{
+    overflow: hidden;
+}

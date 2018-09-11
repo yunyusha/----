@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table{
+
+            border-collapse: collapse;
+            /*
+            设置表格边框合并
+            */
+            border-color: blue;
+        /*设置表格单元格均分表格宽度*/
+            table-layout: fixed;
+        }
+        table td{
+            padding: 10px 20px;
+        }
+        tr:hover{
+            background: #4ff5ff;
+        }
+        .cell{
+
+        }
+
+    </style>
+</head>
+<body>
+<!--
+    table:设置表格的外边框
+    tr: 设置表格的行
+    td: 设置表格的列
+    caption:设置表格的标题
+    th 和td一样,都表示单元格,不同之处是th显示的内容
+以加粗的字体显示,一般用来充当表格的每一列的标题,因此th
+标签通常放置在表格的第一行
+
+table中各个属性的含义:
+border:设置表格的边框
+cellspacing:设置单元格的距离,如果为0,此时单元格之间会相交
+cellpadding:设置单元格的内边距,但是内边距上下左右值都一样
+'因此如果需要设置不同的内边距,此时可以通过padding样式设置
+    frame: 设置表格外侧边框哪部分可见
+    rules: 设置表格内部边框哪部分可见
+    colspan: 设置对应的单元格和其右侧或左侧单元格进行合并(列合并)
+
+    rowspan:设置单元格和其上侧或下侧单元格进行合并(行合并)
+
+    注意colspan和rowspan对应的是一个数值,该数值代表本次合并单元格的数量
+
+        thead, tbody, tfoot分别设置表格的头部,身体和页脚,通常在table标签
+        内部使用,吧一个表格分割三个独立的模块,可以提高表格的加载速度,但是
+        一般不建议使用
+            注意: 表格的加载会阻塞标签下面其他标签内容的加载
+            因此表格一般适用于网页数据量较小(10多条)时使用,而且
+            在开发中同一个页面一般不会出现两个以上的标签,当数据量
+            比较大时,一般选择其他标签模拟表格外观(比如ul,li,div等)
+-->
+    <table border="1" frame="box" cellspacing="0" cellpadding="10"
+    rules="all" summary="成绩表">
+
+
+        <caption>成绩表</caption>
+        <tr>
+            <th>标题1</th>
+            <th>标题2</th>
+            <th>标题3</th>
+            <th>标题4</th>
+            <th>标题5</th>
+            <th>标题6</th>
+        </tr>
+        <tr>
+            <td class="cell" colspan="2">安抚工作不能拉你嗯呢呢里克曼</td>
+
+            <td>单元格3</td>
+            <td colspan="2" rowspan="2">单元格4</td>
+            <!--<td>单元格5</td>-->
+            <td>单元格6</td>
+        </tr>
+        <tr>
+            <td>单元格1</td>
+            <td>单元格2</td>
+            <td rowspan="2">单元格3</td>
+            <td>单元格6</td>
+        </tr>
+        <tr>
+            <td>单元格1</td>
+            <td>单元格2</td>
+            <!--<td>单元格3</td>-->
+            <td>单元格4</td>
+            <td colspan="2">单元格5</td>
+
+        </tr>
+    </table>
+</body>
+</html>

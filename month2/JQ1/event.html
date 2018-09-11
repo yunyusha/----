@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .boy{
+            height: 200px;
+            width: 200px;
+            background: blue;
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*top: 0;*/
+        }
+        .girl{
+            height: 100px;
+            width: 100px;
+            background: red;
+            /*position: absolute;*/
+            /*left: 300px;*/
+            /*top: 300px;*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="boy">
+      <div class="girl">
+
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+    /*
+    * 事件冒泡
+    * js中事件的处理方式按照事件冒泡来处理
+    * 首先事件会被直接点击的标签捕获到,如果当前标签能够处理
+    * 该点击事件,此时该标签直接处理,如果不能,事件会被传递给
+    * 其子集元素,如果父级元素能够处理,此时父级元素进行处理
+    * 否则继续传递,如果整个过程中没有任何标签做出处理,此
+    * 事件会被浏览器主动丢弃
+    * */
+    // $('.girl').on('mouseenter',function () {
+    //     console.log(this);
+    // })
+    $('.boy').on('mouseenter',function (event) {
+        /*
+        * event:事件对象,在该事件对象中存在很多的属性
+        * pageX,pageY:获取鼠标相对于文档左边界和上边界
+        * 的距离
+        * target:获取当前用户鼠标点击的标签
+        * currentTarget: 获取当前执行事件的标签对象
+        *
+        * */
+        console.log(event.target)
+    });
+
+    // $('.girl').on('mouseenter',function (event) {
+    //     console.log(t)
+    // });
+
+    // $('div').on('mousedown', function (evnet) {
+    //     //获取鼠标相对于文档的左边界和上边界距离
+    //     let x = evnet.pageX;
+    //     let y = evnet.pageY;
+    //     //获取当前点击的标签的左边界和上边界距离
+    //     let left = $(this).offset().left;
+    //     let top  = $(this).offset().top;
+    //
+    //     //获取鼠标在标签上的位置
+    //     let c_x = x - left;
+    //     let c_y = y - top;
+    //     let mark = $(this);
+    //
+    //     //为标签添加mousemove事件
+    //     $(document).on('mousemove', function (evnet) {
+    //         //获取鼠标移动过程中鼠标相对于网页左边界和上
+    //         //边界距离
+    //         let x1 = evnet.pageX;
+    //         let y1 = evnet.pageY;
+    //         //计算当前标签的left和top
+    //         let left1 = x1 - c_x;
+    //         let top1 = y1 - c_y;
+    //         $(mark).css({
+    //             left:`${left1}px`,
+    //             top:`${top1}px`
+    //
+    //         })
+    //     })
+    // });
+    //
+    // //当鼠标松开时移除mousemove事件
+    // $('div').on('mouseup',function (evnet) {
+    //     $(document).off('mousemove');
+    // });
+
+    $(document).on('mousedown',function (event) {
+        if(event.button ==2){
+            console.log('')
+        }
+    })
+    /*
+    * preventDefault()阻止标签在指定事件下默认操作
+    *
+    * stopPropagation()阻止事件冒泡
+    * */
+</script>
+</html>

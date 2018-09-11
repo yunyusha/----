@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .cards{
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .cards .card{
+            margin:0.5% 0;
+            color: blue;
+            display: block;
+            width: 33%;
+            border:1px solid rgba(0,0,0,0.7);
+            box-sizing: border-box;
+            box-shadow:inset 0 0 10px rgba(0,0,0,0.5);
+            padding: 20px 40px;
+            float: left;
+        }
+        .cards .card:nth-child(3n-1){
+            margin: 0.5%;
+        }
+        .cards .card img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            float: left;
+        }
+        .cards .card div{
+            width: 50%;
+            float: right;
+        }
+        .cards .card h3{
+            margin-top: 10px;
+        }
+        .cards p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root1">
+        <h1 v-if="show==0">欢迎来到王者荣耀</h1>
+        <h1 v-else-if="show==1">欢迎离开王者荣耀</h1>
+        <h1 v-else>数据测试</h1>
+        <button v-on:click="change">{{state}}</button>
+        <div class="btns">
+            <button @click="update_contacts('insert')">添加</button>
+            <button @click="update_contacts('delete')">删除</button>
+        </div>
+        <div class="cards">
+            <a class="card" href="#" v-for="obj in contacts" :key="obj.id">
+                <img v-bind:src="obj.photo" alt="">
+                <div class="infor">
+                    <h3>{{obj.name}}</h3>
+                    <p>{{obj.tel}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+    /*
+    * v-if根据指定的条件决定当前绑定的标签是否被添加到网页中
+    *
+    * v-else和离他最近的v-if共同构成if-else结构完成两种情况下一种情况的
+    * 加载
+    *
+    * v-if v-else-if v-else:该指令针对多种情况完成其中一种情况的加载
+    *
+    *v-for:通过循环结构动态的添加若干个具有相同外观布局的元素,该操作是
+    * 根据绑定的数据源进行数据动态更新,注意 v-for一般要求和key合用,提高
+    * 数据的刷新效率
+    * */
+    let vm1 = new Vue({
+        el:'#root1',
+        data:{
+            show:true,
+            id:6,
+            state:'开始游戏',
+            contacts:[{'photo':'img/1.jpg','name':'wangbb','tel':'11223366','id':'1'}, {'photo':'img/2.jpg','name':'wan','tel':'11223366','id':'2'},{'photo':'img/3.jpg','name':'zwangbb','tel':'11223366','id':'3'},{'photo':'img/4.jpg','name':'yywangbb','tel':'11223366','id':'4'},{'photo':'img/5.jpg','name':'opwangbb','tel':'11223366','id':'5'}]
+
+        },
+        methods: {
+            change: function (event) {
+                if (this.show == 0) {
+                    this.show = 1;
+                    this.state = "游戏结束"
+                } else if (this.show == 1) {
+                    this.show = 2;
+                    this.state = "开始游戏"
+                } else {
+                    this.show = 0;
+                    this.state = "aaa"
+                }
+            },
+            update_contacts: function (operate) {
+                let index = Math.floor(Math.random() * this.contacts.length);
+                if (operate == 'delete') {
+                    //删除
+                    this.contacts.splice(index, 1);
+                } else if (operate == 'insert') {
+                    //添加
+                    // let x = this.contacts;
+                     // this.contacts.push(this.contacts-[index])
+                    let num = Math.floor(Math.random()*20+1);
+                    let obj = {'photo':`img/${num}.jpg`,'name':'sss',
+                    'tel':'afasfasfa'};
+                    this.contacts.splice(index,0,obj);
+                }
+            }
+        }
+    })
+</script>
+</html>

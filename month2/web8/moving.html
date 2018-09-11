@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端布局</title>
+    <style type="text/css">
+        body{
+            position: relative;
+            width: 1000px;
+            height: 500px;
+        }
+        /*
+
+        在开发中,如果块级元素宽高对应的是百分比,此时该
+        块级元素宽度 = 父级标签内容层宽度*宽度百分比,
+        高度 = 父级标签内容层高度 * 高度百分比
+
+        外边距(内边距) = 父级标签的内容层宽度*外边距(内边距)的百分比
+
+        如果当前标签相对于其父级标签进行定位,此时left和top的百分比所显示的尺寸
+
+            left = (父级标签内容层宽度 + 左右内边距) * left的百分比
+
+            top = (父级标签内容层的高度 + 上下内边距) * top的百分比
+
+
+        */
+        .mark{
+            font-size: 50px;
+            color: red;
+            width: 30%;
+            height: 50%;
+            border: 1px solid red;
+            position: absolute;
+            left: 20%;
+            top: 50%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--
+    移动端网站,必须具备三个重要内容:
+    1,视口(viewport)主要解决网站在不同设备下的渲染方式,保证网站可以动态识别不同
+    网站渲染比例,实现网站内容适配对应设备的渲染方式
+    2,百分比布局,em/rem布局(解决标签或文字跟随网页活动内容动态变化的要求)
+    3,媒体查询(实现网页动态识别不同设备屏幕尺寸,方便做出标签尺寸和文字尺寸的动态改变  )
+    -->
+</head>
+<body>
+     <div class="mark">
+         静夜思
+     </div>
+</body>
+</html>

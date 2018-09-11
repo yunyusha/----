@@ -1,0 +1,12 @@
+  *{
+            padding: 0;
+            margin: 0;
+        }
+        .pb{
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .pb img{
+            transition: left .5s, top .5s;
+        }

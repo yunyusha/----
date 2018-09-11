@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style type="text/css">
+        /*伪类选择器*/
+        /*直接从网页中选择一个标签,如果该标签
+        是p,此时应用样式,如果不是则不使用
+        */
+        p:first-child{
+            color: red;
+        }
+        /*从body中找到所有满足条件的p,之后从结果集中
+        查找第一个并应用样式
+
+        :last-child和first-child作用机理一样,只不过获取的
+        是最后一个元素
+        :last-of-type和first-of-type作用机理相同,只不过是从结果集中选择
+        最后一个元素
+        */
+        p:first-of-type{
+            color: #70f5ff;
+        }
+        /*nth-child(num)获取指定位置的标签,如果该标签是我们需要查找的
+div,此时应用样式,如果不是div此时不需要应用样式,注意num可以是一个数值也可以是有
+n组成的表达式n默认从0开始,依次递增
+            div:nth-of-type(num):先查找所有满足条件的div,之后从结果集中
+查找指定位置的元素
+        */
+        div:nth-of-type(2){
+            background-color: blue;
+        }
+        /*
+        :empty-查找空标签
+
+        :root选择根标签
+        */
+        :root{
+            background-color: red;
+        }
+        /*
+        :target 选择用户点击的锚点
+
+        */
+        :target{
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="md1">这是div1</div>
+        <p id="md2">这是p1</p>
+    <div id="md3">这是div2</div>
+        <p id=" md4">这是p2</p>
+    <div id="md5">这是div3</div>
+        <p id="md6">这是p3</p>
+
+    <a href="#md1">锚点1</a>
+    <a href="#md2">锚点2</a>
+    <a href="#md3">锚点3</a>
+    <a href="#md4">锚点4</a>
+    <a href="#md5">锚点5</a>
+    <a href="#md6">锚点6</a>
+</body>
+</html>

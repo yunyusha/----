@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3</title>
+    <style type="text/css">
+        body{
+            height: 2000px;
+        }
+        .mark{
+            width: 500px;
+            height: 800px;
+            border: 50px dashed darkkhaki;
+            padding: 50px;
+            /*设置背景图片
+            background: 设置标签的背景颜色或背景图片,该css样式是一种
+            复合写法,分别设置标签背景的颜色,图片和重复方式
+
+            */
+            background: rosybrown url(img/heihun.jpg)  no-repeat;
+            /*
+            设置图片的背景尺寸,可以是指定的像素值,也可以是百分比,
+            或者是系统内置的值
+            cover:图片进行等比例缩放,直到图片完全覆盖整个标签
+            contain:图片进行等比例缩放,直到图片某一个方向盛满整个标签
+
+            background-position: 设置背景图片的位置,该样式基于定位实现,第一个值为水平方向,第二个值为
+            竖直方向的位置,注意如果两个值为百分比,此时计算机计算时按照图片宽度和标签宽度的差值进行计算
+
+            */
+            background-size: contain;
+            background-position: center center;
+            /*背景图片开始裁剪的位置,
+            border-box:从边框边界处开始裁剪(默认值)
+            padding-box:从内边距位置开始裁剪
+            content-box:从内容层位置处裁剪
+            */
+            /*background-clip: border-box;*/
+
+            /*
+            蒙版: 用来通过一些特定的png图片设置一些特定的外观样式
+            注意,png素材之中,之前透明的部分在蒙版中是不透明度,不透明度部分在蒙版中
+            是透明的
+            */
+            /*设置蒙版的图片*/
+            -webkit-mask-image: url(img/7.png);
+            /*设置蒙版的尺寸*/
+            -webkit-background-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+        }
+        img{
+            -webkit-box-reflect: below;
+        }
+    </style>
+</head>
+<body>
+    <div class="mark"></div>
+    <img src="img/heihun1.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root1">
+        <input type="text" v-model="message">
+        <p>{{reverseMessage}}</p>
+
+        <input type="text" v-model="firstName">
+        <input type="text" v-model="lastName">
+        <p>{{fullName}}</p>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+    /*
+    * 计算属性: 定义在Vue对象的computed属性中,用来完成对Vue对象普通属性属性值的计算,该
+    * 属性可以有效减少网页中关于普通属性的计算过程,同时该操作基于缓存完成,计算效率高于
+    * 普通函数调用.
+    *
+    * 监听属性(侦听属性): 通过watch设置需要监听的属性名,以及对应的回调操作,一旦该属性
+    * 属性值发生变化,vue自动调用回调函数将被监听的属性,新的属性值通过参数传入,进而完成对
+    * 新数据的运算操作.
+    * */
+    let vm1 = new Vue({
+        el:"#root1",
+        data:{
+            message:'傻B250',
+            firstName:'cai',
+            lastName:'zheyong',
+            fullName:'caizheyong'
+        },
+        computed:{
+            reverseMessage:function () {
+                return this.message.split('').reverse().join('');
+            },
+            full:function () {
+                return this.firstName+""+this.lastName;
+            }
+        },
+        watch:{
+            firstName:function (val) {
+                this.fullName = val+""+this.lastName;
+            },
+            lastName:function (val) {
+                this.fullName = this.firstName+""+val;
+            }
+        }
+    })
+</script>
+</body>
+</html>

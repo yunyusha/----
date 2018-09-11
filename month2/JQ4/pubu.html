@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .pb{
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .pb img{
+            transition: left .5s, top .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="pb">
+
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/pb2.js"></script>
+<script type="text/javascript">
+
+    //创建pb对象
+    // let pb = new PB(10,10,4);
+    // pb.first_load_pb();
+    let pb = null;
+    //记录当前瀑布流显示的列数
+    let col_num = 0;
+    $(window).on('load',function () {
+        let w = $('body').width();
+        if(w <= 600){
+            pb = new PB(5,5,2);
+            pb.first_load_pb();
+            col_num = 2;
+        }else if(w>600 && w<=800){
+            pb = new PB(5,5,3);
+            pb.first_load_pb();
+            col_num = 3;
+        }else {
+            pb = new PB(10,10,5);
+            pb.first_load_pb();
+            col_num = 5;
+        }
+    });
+    $(window).on('resize',function () {
+        let w = $('body').width();
+        if(w <= 600){
+             if(col_num != 2){
+                 pb.reload_pb(5,5,2);
+                 sleep(3000);
+                 col_num = 2;
+
+             }
+        }else if(w > 600 && w <= 800){
+             if(col_num != 3){
+                 pb.reload_pb(5,5,3);
+                 sleep(3000);
+                 col_num = 3;
+             }
+        }else {
+           if(col_num != 5){
+                 pb.reload_pb(10,10,5);
+                 sleep(3000);
+                 col_num = 5;
+             }
+
+        }
+    });
+
+var t = Date.now();
+
+function sleep(d){
+	while(Date.now - t <= d);
+}
+
+
+</script>
+</html>

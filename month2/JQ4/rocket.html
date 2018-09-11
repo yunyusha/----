@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/pb.css">
+    <style type="text/css">
+        .rocket{
+            width: 148.7px;
+            height: 0;
+            background: url("img/o_rocket_button_up.png") no-repeat;
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            opacity: 0;
+            /*transition: all 0.5s;*/
+        }
+        .rocket .r1{
+            width: 100%;
+            height: 100%;
+            background: url("img/o_rocket_button_up.png") no-repeat;
+            background-position: -148.7px 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="pb"></div>
+<div class="rocket"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/pb2.js"></script>
+<script type="text/javascript">
+    $(window).on('load',function () {
+        let pb = new PB(10,10,2);
+        pb.first_load_pb();
+
+    });
+    //为窗口关联网页滚动事件
+    //定义两个变量,存储当前火箭显示动画和隐藏动画的状态,
+    //0代表动画未执行,1代表动画已执行
+    let show_a = 0, hide_a = 1;
+    $(window).on('scroll',function () {
+        //获取网页以今年该滚动的距离
+        let top  = $(document).scrollTop();
+        console.log(top);
+        if(top>10 && show_a==0){
+            show_hide(true);
+            show_a=1;
+            hide_a = 0;
+        }
+        if(top<=10 && hide_a==0 && orclick == false){
+            show_hide(false);
+            hide_a=1;
+            show_a=0
+        }
+    });
+    //定义一个函数完成火箭的显示和隐藏
+    function show_hide(or_show) {
+        if(or_show == true){
+            //显示
+            $('.rocket').css({
+           height:'249px'
+        });
+        $('.rocket').animate({
+            opacity:1
+
+        },500);
+        console.log(top);
+        }else if(or_show==false){
+            //隐藏
+             $('.rocket').animate({
+                 opacity: 0
+             },500,function () {
+                $('.rocket').css({
+                height:0
+            });
+             });
+        }
+    }
+    $('.rocket').on('mouseenter',function () {
+        let mark = $('<div class="r1"></div>');
+        $(this).append(mark);
+        mark.animate({
+            opacity:1
+        },500)
+        }).on('mouseleave',function () {
+            if(orclick == false){
+                $('.rocket .r1').animate({
+                    opacity:0
+                },500,function () {
+                    $(this).remove();
+                });
+            }
+    });
+
+    //定义函数完成火箭的移动
+    //定义变量存储当前火箭是否被点击过
+    let orclick = false;
+        $('.rocket').on('click', function () {
+            if (orclick == false) {
+                orclick = true;
+                //火箭点火
+                let timer = fire();
+                //网页回滚到顶部
+                $(document).scrollTop(0);
+                //火箭移动
+                let timer1 = setTimeout(function () {
+                    move_rocket(timer);
+                }, 1000);
+            }
+        });
+        //定义函数完成火箭喷火问题
+        function fire() {
+            let count = 1;
+            //定义计时器完成火箭喷火过程
+            let timer = setInterval(function () {
+                count++;
+                $('.rocket .r1').css({
+                    backgroundPosition: `${(-148.7) * count}px 0`
+
+                });
+                if (count >= 4) {
+                    count = 1;
+                }
+            }, 100);
+            return timer;
+        }
+        function move_rocket(timer) {
+
+
+        //定义计时器完成火箭的移动
+        let bot = 20;
+        //定义变量存储火箭升空时的速度
+        let speed = 5;
+        //定义变量用来存储时间
+        let time = 0;
+        let timer1 = setInterval(function () {
+            time += 10;
+            speed += 0.1 * time;
+            if (speed >= 50) {
+                speed = 50;
+            }
+            bot += speed;
+            $('.rocket').css({
+                bottom: bot + "px"
+            });
+            if (bot >= 1000) {
+                orclick = false;
+                clearInterval(timer1);
+                //将火箭喷火状态停止
+                clearInterval(timert);
+                //移除火箭
+                $('.rocket .r1').remove();
+                //将火箭重新返回
+                $('.rocket').css({
+                    bottom: '20px',
+                    opacity: 0,
+                    height: 0
+                });
+                show_a = 0;
+                hide_a = 1;
+            }
+        }, 30);
+    }
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>晚上回顾</title>
+    <style type="text/css">
+        .f1{
+            width: 100px;
+            height: 100px;
+            background:red;
+            border:3px solid #2d4fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="f1"></div>
+    <input type="text" name="user">
+
+    <div class="f3">
+        <p>我是中间的p</p>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    //获取标签的高度
+    /*
+    * height()获取标签内容层高度
+    * innerHeight():获取标签内边距和内容层总高度
+    * outerHeight():获取标签内边距,边框和内容层高度
+    * */
+    console.log($('.f1').height());
+    console.log($('.f1').innerHeight());
+    console.log($('.f1').outerHeight());
+
+    //标签的属性操作
+    //为指定标签添加属性
+    $('.f1').attr('id','new');
+    //获取标签属性
+    console.log($('.f1').attr('id'));
+    //删除标签属性
+    console.log($('.f1').removeAttr('id'));
+    //修改标签属性
+    $('.f1').attr('class','f1 f3');
+
+    //为普通标签添加文本
+    $('.f1').html('<h1>静夜思</h1>');
+    console.log($('.f1').text());
+
+    //form表单控件数据的获取或设置
+    // $("input[name = 'user']").val('阿斯达所大所');
+
+    //向指定标签内部最后面插入元素
+</script>
+</html>

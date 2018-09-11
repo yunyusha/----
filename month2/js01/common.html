@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .head {
+            text-align: center;
+        }
+        .head span{
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            background: #f2f5fa;
+            color: #545454;
+        }
+        .head span:first-child{
+            border-radius:25px 0 0 25px;
+        }
+         .head span:last-child{
+            border-radius:0 25px 25px 0;
+        }
+        .head .selected{
+            background: #1a74fc;
+            color: white;
+        }
+        /*company*/
+        .company,.center{
+            width: 90%;
+            margin: 50px auto 20px;
+        }
+        .company .img{
+
+            font-size: 0;
+        }
+        .company .img img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .company p{
+            text-indent: 2em;
+            color:#555;
+            line-height: 26px;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+        /*center*/
+        .center .person{
+            width: 45%;
+        }
+        .center .person .img{
+            width: 30%;
+        }
+        .center .person img{
+            width: 100px;
+        }
+        .center .person .des{
+            width: 75%;
+            float: left;
+        }
+        .center .des h2{
+            font-size: 20px;
+            
+        }
+        .text-center .des h3{
+            font-size:18px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        .center .des p{
+            font-size: 14px;
+            color: #000;
+        }
+        .center .person:nth-child(2n-1){
+            float: left;
+            margin: 25px 0;
+        }
+        .center .person:nth-child(2n){
+            float: right;
+               margin: 25px 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="about">
+        <div class="head">
+            <span class="selected">公司简介</span><span>团队核心</span>
+        </div>
+        <div class="company">
+            <div class="img">
+                <img src="img/muran.jpg" alt="">
+            </div>
+            <p>幕然科技，是中国的一家高新技术互联网科技公司，正式成立于2015年６月19，幕然秉承“勇气、责任、创造、专业”的企业价值观及“让工作更便捷，让服务更贴心，让生活更美好！”的企业宗旨，立志为中国智慧城市、互联网科技发展尽一份责任，为营造和谐美好的社会环境贡献一份力量！</p>
+        </div>
+        <!--核心-->
+
+        <div class="center">
+            <div class="person">
+                <div class="des">
+                    <div class="img">
+                        <img src="img/1.png" alt="">
+                    </div>
+            <h2>蔡哲勇</h2>
+            <h3>总经理 & 技术总监</h3>
+            <p>主要经历：负责软件系统的架构设计，具有丰富的移动端开发经验（安卓/iOS），曾主导《视频警情推送布控系统》、《安防设备智能维护系统》等项目的设计与开发。</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="center">
+            <div class="person">
+                <div class="des">
+                    <div class="img">
+                        <img src="img/1.png" alt="">
+                    </div>
+            <h2>蔡哲勇</h2>
+            <h3>总经理 & 技术总监</h3>
+            <p>主要经历：负责软件系统的架构设计，具有丰富的移动端开发经验（安卓/iOS），曾主导《视频警情推送布控系统》、《安防设备智能维护系统》等项目的设计与开发。</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="center">
+            <div class="person">
+                <div class="des">
+                    <div class="img">
+                        <img src="img/1.png" alt="">
+                    </div>
+            <h2>蔡哲勇</h2>
+            <h3>总经理 & 技术总监</h3>
+            <p>主要经历：负责软件系统的架构设计，具有丰富的移动端开发经验（安卓/iOS），曾主导《视频警情推送布控系统》、《安防设备智能维护系统》等项目的设计与开发。</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="center">
+            <div class="person">
+                <div class="des">
+                    <div class="img">
+                        <img src="img/1.png" alt="">
+                    </div>
+            <h2>蔡哲勇</h2>
+            <h3>总经理 & 技术总监</h3>
+            <p>主要经历：负责软件系统的架构设计，具有丰富的移动端开发经验（安卓/iOS），曾主导《视频警情推送布控系统》、《安防设备智能维护系统》等项目的设计与开发。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    //网页加载结束
+    window.onload = function (ev) {
+
+        //获取公司简介
+        let company = document.querySelector('.company');
+    //    获取公司核心
+        let center = document.querySelector('.center');
+    //    获取span标签
+        let spans = document.querySelectorAll('span');
+        for(let i=0;i<spans.length;i++){
+            spans[i].onclick = function (ev2) {
+            //删除所有标签的class值
+                for(let i=0;i<spans.length;i++){
+                    spans[i].setAttribute('class','');
+                }
+                //为当前点击的span添加class属性
+                this.setAttribute('class','selected');
+                //获取点击的span标签的内容
+                let txt = this.innerHTML;
+                if (txt=='公司简介'){
+                    //显示公司简介
+                    /*
+                    * style标签对象的属性,用来修改标签的样式
+                    * */
+                    company.style.display="block";
+                    center.style.display = "none";
+                }else{
+                    //显示团队核心
+                    company.style.display="none";
+                    center.style.display = "block";
+                }
+            }
+        }
+
+    }
+</script>
+</html>

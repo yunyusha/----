@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .mark{
+            width: 200px;
+            height: 200px;
+            border-radius: 500px 500px 500px;
+            /*background: linear-gradient(60deg,#2dedff,indigo);*/
+            background: radial-gradient(#2dedff,indigo,red,black);
+        }
+        img{
+            /*滤镜
+            grayscale(%):将图像转换成灰度图
+            sepia(%):将图像转换成褐色图像
+            saturate(%):转换图像的饱和度
+            ...
+            blur(px):设置图像的高斯模糊效果
+            */
+
+            -webkit-filter: grayscale(40%);
+        }
+    </style>
+</head>
+<body>
+   <div class="mark">
+   </div>
+    <div class="img">
+        <img src="img/heihun1.jpg" alt="">
+    </div>
+</body>
+</html>

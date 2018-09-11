@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 500px;
+            height: 500px;
+            margin: 80px;
+            background: red;
+            border:1px solid red;
+            position: relative;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            background: blue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    //offset().left,offset(),top:获取指定元素相对于body
+    //左端和上端偏移
+    // alert($('.son').offset().left)
+    //position().left ,position().right获取指定标签
+    //在定位过程中相对于父级标签的left和top值
+    alert($('.son').position().left)
+
+
+</script>
+</html>

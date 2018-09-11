@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        body{
+            background: white;
+        }
+        .head{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            padding: 20px 0 0;
+            box-shadow: 0 10px 30px rgb(220,193,193);
+        }
+        #root1{
+            width: 800px;
+            float: right;
+            text-align: right;
+            position: relative;
+        }
+        .head img{
+            float: left;
+        }
+        #root1 ul a {
+            background: white;
+          }
+        #root1 ul a:hover{
+            background: rgb(208,208,208);
+        }
+        .head .content{
+            width: 1200px;
+            margin: 0 auto;
+            clear: both;
+            background: white;
+        }
+        /*products*/
+        .pros{
+            position: relative;
+            overflow: hidden;
+            padding: 240px 0;
+            background: #384ef9;
+            text-align: center;
+            margin-top: 800px;
+
+        }
+        .pros .blue{
+            width: 1200px;
+            height: 1257px;
+        }
+        .pros .product{
+        }
+        .products{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 240px;
+
+        }
+        .product{
+            overflow: hidden;
+            padding: 0 10px;
+            width: 1218px;
+            margin:0 auto;
+        }
+        .pro {
+
+            border-radius: 9px;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            width: 386px;
+            height: 400px;
+            background: linear-gradient(to right bottom,#4e6cff, #3243ff);
+            float: left;
+            margin: 10px;
+        }
+        .circle1{
+            width: 150px;
+            height: 150px;
+            background: #637aff;
+            border-radius: 50%;
+            position: absolute;
+            left: 117.5px;
+            bottom: -75px;
+            z-index: 5;
+        }
+         .circle2{
+            width: 300px;
+            height: 300px;
+            background: #5765ff;
+            border-radius: 50%;
+            position: absolute;
+            left: 42.5px;
+            bottom: -150px;
+             z-index: 4;
+        }
+         .circle3{
+            width: 450px;
+            height: 450px;
+            background: #4e53ff;
+            border-radius: 50%;
+            position: absolute;
+            left: -32.5px;
+            bottom: -150px;
+             z-index: 3;
+        }
+        .circle1,.circle2,.circle3{
+            opacity: 0;
+            transform: scale(.9);
+            transition: all .5s;
+        }
+        .pro:hover .circle1,.pro:hover .circle2,.pro:hover .circle3{
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        .pro:hover{
+            background: linear-gradient(to left top,#4e6cff, #3243ff);
+        }
+        .aa{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9;
+            text-align: center;
+        }
+        .aa img{
+            margin-top: 87px;
+        }
+        .aa h3{
+            margin-top: 79px;
+            text-align: left;
+            padding-left: 25px;
+            font-size: 24px;
+            color: #d3d7ff;
+            font-weight: 400;
+        }
+        .aa p{
+            margin-top: 25px;
+             text-align: left;
+            padding:0 25px;
+            color: #b1b8ff;
+            font-size: 14px;
+        }
+    .clear{
+        clear: both;
+    }
+    .lantiao{
+        display: block;
+        background: #ff3c65;
+        height: 3px;
+        width: 100px;
+        position: absolute;
+        right: 610px;
+        bottom: 0;
+    }
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="content">
+         <img src="img/logo.png" alt="">
+         <div id="root1">
+        <link-list v-
+                   for="obj in titles" :datalist="obj.list" :style_out="style_out" :title="obj.tit"></link-list>
+        <span class="lantiao"></span>
+         </div>
+
+        <div class="clear"></div>
+    </div>
+
+</div>
+<div class="body" id="root2">
+    <div class="pros">
+        <img src="img/blue.jpg" alt="" class="blue">
+        <div class="products">
+
+            <div class="product">
+        <a href="" class="pro" v-for="obj in products" :key="obj.url">
+            <div class="aa">
+                <img :src="obj.url" alt="">
+                <h3>{{obj.title}}</h3>
+                <p>{{obj.des}}
+                </p>
+            </div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </a>
+    </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="js/component.js"></script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    let vm1 = new Vue({
+        el:'#root1',
+        data:{
+            style_out:{
+                width:'100px',
+                margin:'0 10px',
+                display:'inline-block',
+                textAlign:'center',
+                padding:'30px 0',
+                color:'#666',
+                position:'relative'
+
+            },
+            titles:[
+                {'tit':'首页','list':[]},
+                {'tit':'关于乐尚','list':['乐尚简介','乐尚文化','乐尚团队','新闻咨询']},
+                {'tit':'技术产品','list':[]},
+                {'tit':'解决方案','list':['互联网+技术','互联网+品牌','互联网+品牌','互联网+运营']},
+                {'tit':'客户案例','list':[]},
+                {'tit':'联系我们','list':[]}
+            ]
+        }
+    });
+
+    //定义另外一个vue对象
+    let vm2 = new Vue({
+        el:'#root2',
+        data:{
+            products:[
+                {'url':'img/mall.png','title':'商城','des':'网上商城类似于现实世界当中的商店，差别是利用电子 商务的各种手段，达成从买到卖的过程的虚拟商店。'},
+                 {'url':'img/xcx.png','title':'小程序','des':'小程序是一种新的开放能力,可以在微信内被便捷地获取 和传播,同时具有出色的使用体验。'},
+                 {'url':'img/JY.png','title':'教育','des':'教育，教育者有目的有计划有组织的对受教育者的心智 发展进行教化培育，以现有的经验、学识推敲于人，为 其解释各种现象 。'},
+                 {'url':'img/SCRM.png','title':'SCRM','des':'助力企业实现全渠道获客,基于微信实现精准一对一沟通 实现微信端持续获客凝聚16年数字营销经验。'},
+                 {'url':'img/GJ.png','title':'工具','des':'教育，教育者有目的有计划有组织的对受教育者的心智 发展进行教化培育，以现有的经验、学识推敲于人，为 其解释各种现象。'}
+            ]
+        }
+    });
+
+    let offset = 0;
+    let y = -300;
+    $(window).on('load',function () {
+        offset = $(document).scrollTop();
+        y = -300 + offset*325/700;
+        $('.blue').css({
+            transform:'teanslateY('+y+'px)'
+        })
+    });
+    $(window).on('scroll',function () {
+        let new_v = $(document).scrollTop();
+        let dis = new_v - offset;
+        y+= dis*325/700;
+        if(dis >=0){
+            //网页向上滚动
+            y+=3;
+        }else{
+            //网页向下滚动
+            y-=3;
+        }
+        $('.blue').css({
+            transform:'translateY( "+y+"px)'
+        })
+
+    });
+</script>
+</html>

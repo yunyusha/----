@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换</title>
+    <style type="text/css">
+        .mark{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background:url("img/heihun1.jpg");
+            background-size: cover;
+
+            /*
+    此种写法,可以保证所有css样式的改变都会产生动画,并且动画是同时执行的
+        参数1: 代表所有的样式都可以产生过渡动画
+        参数2: 代表动画运行的时间
+        参数3: 代表动画延迟执行的时间
+        参数4: 代表动画运行速度(linear: 匀速,ease-in:速度逐渐变快,ease-out
+        速度逐渐变慢,ease-in-out:速度先快后慢)
+
+        该写法可以保证动画按顺序执行
+            */
+
+            transition: all 20s;
+
+        }
+        .mark:hover{
+            width: 400px;
+            /*
+
+            变换: translate(100px,100px)平移变换,参数可以分别代表,水平
+            和竖直
+            方向的变换,如果为百分比,此时相对于标签自身的宽度和高度进行计算
+
+            变换分为平移变换(translate),旋转变换(rotate),缩放变换(scale)
+            ,倾斜变换(skew),注意四种变换可以根据情况进行随机组合
+            */
+            /*transform: translate(200px, 100px);*/
+            /*transform: scale(2.5,2.5);*/
+            /*transform: skew(45deg,0);*/
+            ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mark">
+
+    </div>
+</body>
+</html>

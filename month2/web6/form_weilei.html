@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+        form表单控件的伪类
+        */
+        /*
+        :checked-选择单选框或复选框被选中的状态
+        */
+        input[type="radio"]:checked+span{
+            color: red;
+        }
+        /*:focus-输入框获得焦点的状态即输入框被选中的状态*/
+        input[type="text"]:focus{
+            border: 1px solid red;
+            width: 200px;
+            height: 30px;
+            /*设置标签边框的外轮廓, outline:none去除标签外轮廓*/
+            outline: none;
+        }
+        /*disabled代表输入框处于禁用状态*/
+        input[type]:disabled{
+            background-color: gray;
+        }
+        /*enabled代表标签处于可用状态*/
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            性别:
+            <input type="radio" name="sex"><span>男</span>
+            <input type="radio" name="sex"><span>女</span>
+        </div>
+
+        <div>
+
+            用户名: <input type="text" name="username">
+        </div>
+
+    </form>
+</body>
+</html>

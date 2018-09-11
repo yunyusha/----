@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片懒加载</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .mark{
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+        .mark img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mark"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    //定义数组存储10张图片的链接
+    let arr = [];
+    for (let i = 0;i<10;i++){
+        arr.push(`img/j${i+1}.jpg`);
+    }
+    // console.log(arr)
+    //获取窗口高度
+    let win_h = document.documentElement.clientHeight||document.body.clientHeight;
+    //向网页中插入图片
+    let h = 0;//存储mark标签的高度
+    let i =0;
+    let timer = setInterval(function () {
+         h = $('.mark').height();
+         if(h>=win_h){
+             clearInterval(timer);
+         }else {
+             insert_one_img();
+         }
+    },100);
+
+    //定义函数完成对一张图片的插入
+    function insert_one_img() {
+        $('.mark').append($(`<img src="${arr[i++]}" alt=""/>`));
+        // i++;
+        if(i>=10){
+            i=0
+        }
+    }
+
+    //jQuery中事件的关联,通过on关联对应的事件,第一个参数代表事件的名字
+    //第二个参数是事件需要执行的回调函数
+    $(window).on('mousewheel', function () {
+    //获取网页相对于窗口上端滚动的距离
+        let top = $(document).scrollTop();
+        //获取mark标签的高度
+        h = $('.mark').height();
+        if(top+win_h >= h-1){
+            insert_one_img();
+        }
+    })
+
+
+
+
+
+</script>
+</html>

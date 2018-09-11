@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .mark{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .form-control{
+            width: 50%;
+            margin: 15px auto;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <div class="mark" id="mark">
+    </div>
+    <button class="btn btn-success">添加</button>
+    <button class="btn btn-danger">删除</button>
+    <form action="">
+    <input type="text" class="form-control" placeholder="Text_input">
+    </form>
+</body>
+<script type="text/javascript">
+    //获取指定的标签
+    // 根据标签的class属性值获取指定的标签,返回值是一个数组,通过下表获得指定的标签
+    //根据标签的属性值获取对应的标签,返回结果直接是一个标签对象
+    let mark = document.getElementsByClassName('mark');
+
+    mark = document.getElementById('mark');
+
+    //根据标签名获取(返回结果仍然是数组)
+    mark = document.getElementsByTagName('div') ;
+    //根据标签的name属性获取(通常用来获取指定name属性的标签,返回结果是一个数组)
+    mark = document.getElementsByName('user');
+
+    //ie8以上兼容
+    mark = document.querySelector('.mark');
+
+    mark = document.querySelectorAll('.mark');
+    console.log(mark);
+
+    function load1() {
+        let btns = document.querySelectorAll('.btn');
+        for(let i = 0;btns.length;i++){
+            btns[i].onclick = function ad(){
+                /*
+                * js事件中 关联的方法中存在一个关键字this
+                * this指代的是直接调用this所在的函数的具体对象
+                * (this所在的函数,被谁调用,this就指代谁)
+                * innerHTML标签对象的属性,用来获取标签中的内容
+                *
+                * value form表单控件的属性,用来获取form表单控件的数据
+                * 比如输入框的数据
+                * */
+                let txt = this.innerHTML;
+                if (txt=='添加'){
+                    //执行添加操作
+                    //创建标签
+                    let mark = document.createElement('h1');
+                    mark.innerHTML = document.querySelector('.form-control').value;
+
+                    let par = document.getElementById('mark');
+                    par.appendChild(mark);
+                }else {
+                    //执行删除操作
+                    let h1 = document.querySelectorAll('#mark h1');
+                    let par = document.getElementById('mark');
+                    par.removeChild(h1[0])
+                }
+            }
+        }
+    }
+    //onload:窗口对象事件,当网页全部加载(图片,视频等资源已经加载
+    // 完成)成功时调用
+    window.onload = load1;
+</script>
+</html>

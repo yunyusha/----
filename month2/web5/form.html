@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+    <style>
+        .user, .pass{
+            width: 100px;
+            height: 30px;
+        }
+        #file{
+            display: none;
+        }
+
+        #photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+        /*设置图片和文字在竖直方向上居中显示
+        */
+    </style>
+</head>
+<body>
+<!--
+form表单主要用来实现客户端将用户输入的数据提交给后台服务器
+action: 对应的服务器的地址(即url)
+method:客户端和服务器连接的方式,主要的连接方式有get和post
+两种,默认是get连接
+
+enctype: 设置form表单提交的数据的编码规则,默认是application/
+x-www-form-urlencoded: 按照标准的utf8编码格式进行数据的编码
+如果form表单传输的数据中含有文件类型的数据,此时enctype的值
+必须为multipart/form-data
+-->
+<form action="" method="post" enctype="multipart/form-data">
+    <!--单行文本输入框
+    type:设置input标签的类型,text代表的是单行文本输入框,
+    name设置未来向服务器提交的数据的key,value设置未来向服务器具体
+    提交的数据value,但是注意,如果当前form表单控件中的数据无法唯一确定
+    此时value属性可以不用添加
+    placeholder:设置当form表单控件没有其他数据时,所对应的数据提示
+    -->
+    用户名: <input class="user" type="text" name="username"
+value="xiaocaicai" placeholder="有效的用户邮箱">
+    密码: <input type="password" class="pass" name="password"
+placeholder="6-15为数字和字组成的内容">
+    <!--
+    radio: 代表单选框,注意,单选框name属性值必须相同,否则单选框就会被看成是
+    复选框,其次因为每一个单选框对应的值都是唯一的,因此对于单选框,value需要
+    人为规定值
+    -->
+    <br>
+    性别: <input type="radio" name="sex" value="男" checked>男
+    <input type="radio" name="sex" value="女">女
+
+    <br>
+    <!--文件上传控件-->
+    头像上传
+    <!--
+    文件上传
+        label:将对应id属性的控件和其标记的内容进行绑定
+    -->
+    <input type="hidden" name="id" value="xxxx">
+    <!--下拉菜单-->
+    所在城市:
+    <select name="city" id="sel">
+        <option value="郑州">郑州</option>
+        <option value="广州">广州</option>
+        <option value="兰州">兰州</option>
+    </select>
+    <!--
+    多行输入框
+    cols:代表多行文本输入框每行显示的列数
+    rows:代表多行文本输入框最多能够显示的行数,如果大于该行数
+    多处的内容,用户只能通过滚动查看
+    -->
+    <br>
+    <textarea name="message" id="" cols="30" rows="10"></textarea>
+    <br>
+    <!--提交按钮
+    当用户点击的时候form表单自动将用户输入的数据直接提交给服务器,因此该按钮
+    通常用来完成数据提交操作
+    -->
+    <input type="submit" value="注册">
+    <!--重置按钮
+    当用户点击按钮的时候,该按钮会自动将所用form表单
+    控件恢复成最初的状态,因此该按钮经常用来完成数据清零的操作
+    -->
+    <input type="reset" value="重置">
+    <!--普通按钮:当用户点击按钮时,该按钮并不会控制表单进行任何操作-->
+    <input type="button" value="普通按钮">
+    <!--注意:在网页中,按钮对应的盒模型结构 默认是怪异盒模型
+    width/height包含三部分(border+padding+content)
+    -->
+
+
+
+
+    <br>
+
+
+
+    <label for="file"><img src="img/day.png" alt=""
+    id="photo"> </label>
+    <input type="file" name="file_up" multiple id="file">
+
+
+
+
+
+    <!--日期控件-->
+    <!--出生日期: <input type="date" name="birth" value="2018-01-01">-->
+    <!--星期控件-->
+    <!--星期: <input type="week" name="week">-->
+    <!--数字控件-->
+    <!--<input type="number" min="0" max="10" step="2">-->
+    <!--邮箱控件-->
+    <!--<input type="email">    -->
+    <br>
+    <!--
+    复选框:checked设置单选框或者复选框是否被选中
+    -->
+    爱好:     <input type="checkbox" name="hobby1" checked value="打篮球">打篮球
+              <input type="checkbox" name="hobby1" value="KTV">KTV
+              <input type="checkbox" name="hobby1" value="看片">看片
+              <input type="checkbox" name="hobby1" value="打游戏">打游戏
+</form>
+</body>
+</html>
